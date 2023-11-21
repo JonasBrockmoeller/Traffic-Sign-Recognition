@@ -1,5 +1,7 @@
 # Traffic-Sign-Recognition
 
+<img src="https://i0.wp.com/statistik-dresden.de/wp-content/uploads/2012/04/CRISP-DM_Process_Diagram1.png?w=479&ssl=1">
+
 ### Business Understanding
 Business Case (Everything is answered in here)
 
