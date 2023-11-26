@@ -36,7 +36,6 @@ def make_plt(y_train, x_label, y_label):
 def show_occurences_graph(y_train, x_label, y_label):
     print("Step 4")
     print("Comparing occurences of each class in the training dataset")
-    # Plot to show frequencies of data for Training dataset
     plt = make_plt(y_train, x_label, y_label)
     return plt
 
@@ -48,16 +47,13 @@ def plot_random_each_class(n_row,n_col,X_train, y_train, classes, class_indices,
     gs1.update(wspace=0.5, hspace=0.5) # set the spacing between axes.
 
     for c, c_i, c_count in zip(classes, class_indices, class_counts):
-        # i = i + 1 # grid spec indexes from 0
         ax1 = plt.subplot(gs1[c])
         plt.axis('on')
         ax1.set_xticklabels([])
         ax1.set_yticklabels([])
         ax1.set_aspect('equal')
-        #plt.subplot(4,11,i+1)
         ind_plot = np.random.randint(c_i, c_i+c_count)
         plt.imshow(X_train[ind_plot])
-        #plt.text(2,4,str(y[ind_plot]),color='k',backgroundcolor='c', fontsize=15)
         plt.text(0, 0, '{}: {:.20}'.format(c, sign_names[c]), color='k',backgroundcolor='c', fontsize=12)
 
         plt.axis('off')
@@ -68,7 +64,6 @@ def plot_random_each_class(n_row,n_col,X_train, y_train, classes, class_indices,
 def show_example_img_per_each_class(X_train, classes, class_indices, class_counts, sign_names):
     print("Step 3")
     print("Showing example images for classes 0-14 from the training dataset")
-    # Visualizations of image datasets for each class
     for c, c_i, c_count in zip(classes, class_indices, class_counts):
         print(c, ". Class : ", sign_names[c])
         fig = pyplot.figure(figsize=(3, 1))
@@ -77,7 +72,6 @@ def show_example_img_per_each_class(X_train, classes, class_indices, class_count
             axis = fig.add_subplot(1, 3, i + 1, xticks=[], yticks=[])
             random_indices = np.random.randint(c_i, c_i + c_count, 10)
             axis.imshow(X_train[random_indices[i], :, :, :])
-            # axis.text(0, 0, '{}: {}'.format(c, sign_names[c]), color='k',backgroundcolor='c', fontsize=8)
         pyplot.savefig('./Images/01_example_images_class_' + str(c) + '.png')
         pyplot.show()
 
