@@ -41,7 +41,6 @@ def show_occurences_graph(y_train, x_label, y_label):
 
 
 def plot_random_each_class(n_row,n_col,X_train, y_train, classes, class_indices, class_counts, sign_names):
-
     plt.figure(figsize = (25,15))
     gs1 = gridspec.GridSpec(n_row,n_row)
     gs1.update(wspace=0.5, hspace=0.5) # set the spacing between axes.
@@ -106,16 +105,21 @@ def load_data():
 def run():
     print("Letse gooooo")
     X_train, y_train, sign_names = load_data()
+
     classes, class_indices, class_counts = basic_text_analysis(X_train, y_train)
     time.sleep(1)
+
     show_example_img_per_each_class(X_train, classes[:14], class_indices[:14], class_counts[:14], sign_names)
     time.sleep(1)
+
     plot_random_each_class(7,7,X_train, y_train, classes, class_indices, class_counts, sign_names)
     time.sleep(1)
+
     show_occurences_graph(y_train, 'Class Number(0-42)', 'Number of Occurrences')
     plt.savefig('./Images/02_graph_distribution.png')
     plt.show()
     time.sleep(1)
+
     filter_arr = []
     for element in y_train:
         if element < 9:
@@ -124,10 +128,12 @@ def run():
             filter_arr.append(False)
     sign_y_train = y_train[filter_arr]
     time.sleep(1)
+
     show_occurences_graph(sign_y_train, 'Class Number(0-8)', 'Number of Occurrences')
     plt.savefig('./Images/04_graph_distribution_speedlimitsigns_only.png')
     plt.show()
     time.sleep(1)
+
     compare_speedLimitSigns_vs_rest(y_train)
     time.sleep(1)
 
