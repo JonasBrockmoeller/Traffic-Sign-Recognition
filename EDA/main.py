@@ -16,7 +16,7 @@ def compare_speedLimitSigns_vs_rest(custom_y_train):
             custom_y_train[i] = 0
         else:
             custom_y_train[i] = 1
-    plt = make_plt(custom_y_train, '0=speedlimit, 1=rest', 'Number of Occurances')
+    plt = make_plt(custom_y_train, '0=speedlimit, 1=rest', 'Number of Occurrences')
     plt.savefig('./Images/03_graph_speedlimit_vs_rest.png')
     plt.show()
 
