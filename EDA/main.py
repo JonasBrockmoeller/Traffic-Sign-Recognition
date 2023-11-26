@@ -38,8 +38,7 @@ def show_occurences_graph(y_train, x_label, y_label):
     print("Comparing occurences of each class in the training dataset")
     # Plot to show frequencies of data for Training dataset
     plt = make_plt(y_train, x_label, y_label)
-    plt.savefig('./Images/02_graph_distribution.png')
-    plt.show()
+    return plt
 
 
 def plot_random_each_class(n_row,n_col,X_train, y_train, classes, class_indices, class_counts, sign_names):
@@ -119,9 +118,24 @@ def run():
     time.sleep(1)
     plot_random_each_class(7,7,X_train, y_train, classes, class_indices, class_counts, sign_names)
     time.sleep(1)
-    show_occurences_graph(y_train, 'Class Number(0-42)', 'Number of Occurances')
+    show_occurences_graph(y_train, 'Class Number(0-42)', 'Number of Occurrences')
+    plt.savefig('./Images/02_graph_distribution.png')
+    plt.show()
+    time.sleep(1)
+    filter_arr = []
+    for element in y_train:
+        if element < 9:
+            filter_arr.append(True)
+        else:
+            filter_arr.append(False)
+    sign_y_train = y_train[filter_arr]
+    time.sleep(1)
+    show_occurences_graph(sign_y_train, 'Class Number(0-8)', 'Number of Occurrences')
+    plt.savefig('./Images/04_graph_distribution_speedlimitsigns_only.png')
+    plt.show()
     time.sleep(1)
     compare_speedLimitSigns_vs_rest(y_train)
+    time.sleep(1)
 
 
 if __name__ == '__main__':
