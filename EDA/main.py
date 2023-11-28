@@ -1,6 +1,7 @@
 import pickle
 import time
 import np
+import pandas as pd
 
 from pandas.io.parsers import read_csv
 from matplotlib import pyplot, pyplot as plt, gridspec
@@ -19,6 +20,7 @@ def compare_speedLimitSigns_vs_rest(custom_y_train):
     plt = make_plt(custom_y_train, '0=speedlimit, 1=rest', 'Number of Occurrences')
     plt.savefig('./Images/03_graph_speedlimit_vs_rest.png')
     plt.show()
+
 
 def make_plt(y_train, x_label, y_label):
     plt.figure(0, figsize=(20, 5))
@@ -75,7 +77,7 @@ def show_example_img_per_each_class(X_train, classes, class_indices, class_count
         pyplot.show()
 
 
-def basic_text_analysis(X_train, y_train):
+def basic_text_analysis(X_train, y_train, sign_names):
     print("Step 2")
     print("Basic analysis of the training dataset")
     n_train = X_train.shape[0]
@@ -85,6 +87,11 @@ def basic_text_analysis(X_train, y_train):
     print("Number of training examples =", n_train)
     print("Image data shape =", image_shape)
     print("Number of classes =", n_classes)
+
+    df = pd.DataFrame({'class': sign_names[classes], 'count': class_counts})
+    df['percentage'] = df['count']/n_train*100
+    print(df.nlargest(10, 'percentage'))
+
     return classes, class_indices, class_counts
 
 
@@ -106,7 +113,7 @@ def run():
     print("Letse gooooo")
     X_train, y_train, sign_names = load_data()
 
-    classes, class_indices, class_counts = basic_text_analysis(X_train, y_train)
+    classes, class_indices, class_counts = basic_text_analysis(X_train, y_train, sign_names)
     time.sleep(1)
 
     show_example_img_per_each_class(X_train, classes[:14], class_indices[:14], class_counts[:14], sign_names)
