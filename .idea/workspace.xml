@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0993a30-f09c-4c77-bf34-9732b210f690" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Data/forms.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Data/signshape.csv" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Data/train.p" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Experiment_3.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/binary_cnn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Convolutional.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Convolutional.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Experiment_3.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/German-Traffic-Sign-Dataset/Experiment_3.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Experiment-2-Multi-Class",
+    "git-widget-placeholder": "experiment-3-multi-head",
     "last_opened_file_path": "/Users/jonasbrockmoller/Documents/GitHub/Traffic-Sign-Recognition/German-Traffic-Sign-Dataset/Data",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
